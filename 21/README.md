@@ -1,18 +1,39 @@
-## Getting Started
+# meu-app-blackjack-java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descrição do Projeto
 
-## Folder Structure
+Este projeto é um jogo de Blackjack implementado em Java. O objetivo do jogo é que os jogadores tentem obter uma mão com um valor total mais próximo de 21 do que a mão do dealer, sem ultrapassar esse valor.
 
-The workspace contains two folders by default, where:
+## Estrutura do Projeto
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+O projeto possui a seguinte estrutura de diretórios:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- `src/blackjack`: Contém os arquivos de código-fonte do jogo.
+  - `App.java`: Ponto de entrada da aplicação.
+  - `Carta.java`: Define a classe que representa uma carta do baralho.
+  - `Baralho.java`: Define a classe que representa um baralho de cartas.
+  - `Jogador.java`: Define a classe que representa um jogador no jogo.
+  - `Mao.java`: Define a classe que representa a mão de um jogador.
+  - `Jogo.java`: Define a classe que gerencia a lógica do jogo de Blackjack.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- `lib`: Diretório destinado a bibliotecas externas, se necessário.
 
-## Dependency Management
+- `.vscode`: Contém as configurações do ambiente de desenvolvimento.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Como Executar o Jogo
+
+1. Certifique-se de ter o Java instalado em sua máquina.
+2. Clone este repositório ou baixe os arquivos do projeto.
+3. Navegue até o diretório do projeto.
+4. Compile os arquivos Java usando o comando:
+   ```
+   javac src/blackjack/*.java
+   ```
+5. Execute o jogo com o comando:
+   ```
+   java src/blackjack/App
+   ```
+
+## Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
