@@ -33,7 +33,7 @@ public class App {
                 System.out.print("Escolha: ");
                 System.out.flush(); // Force output to display
                 
-                // Use nextLine() + parse em vez de nextInt()
+                
                 String escolhaStr = scanner.nextLine();
                 int escolha;
                 try {
@@ -47,6 +47,7 @@ public class App {
                     jogo.jogadorPedeCarta();
                     System.out.println("\nVocê recebeu uma nova carta.");
                     exibirCartasJogador(jogo);
+                    jogo.getCartaVisivelDealer()
                 } else if (escolha == 2) {
                     jogadorParou = true;
                 } else {
