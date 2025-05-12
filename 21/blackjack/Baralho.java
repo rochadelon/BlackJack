@@ -158,4 +158,12 @@ public class Baralho {
         
         System.out.println("Baralho embaralhado com sucesso!");
     }
+
+    public Carta pegarCarta() {
+        if (estaVazio()) {
+            System.out.println("O baralho está vazio!");
+            return null;
+        }
+        return removerPrimeira(); // Remove and return the top card
+    }
 }

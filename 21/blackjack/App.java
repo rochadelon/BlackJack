@@ -7,6 +7,7 @@ public class App {
         
         // Obter nome do jogador
         System.out.print("Insira seu nome: ");
+        System.out.flush(); // Force output to display
         String nome = scanner.nextLine();
         
         boolean continuarJogando = true;
@@ -30,6 +31,7 @@ public class App {
                 System.out.println("\nSeu total: " + jogo.getValorMaoJogador());
                 System.out.println("Opções: (1) Pedir carta | (2) Parar");
                 System.out.print("Escolha: ");
+                System.out.flush(); // Force output to display
                 
                 // Use nextLine() + parse em vez de nextInt()
                 String escolhaStr = scanner.nextLine();
@@ -78,6 +80,7 @@ public class App {
             
             // Perguntar se quer jogar novamente
             System.out.print("\nJogar novamente? (S/N): ");
+            System.out.flush(); // Force output to display
             String resposta = scanner.nextLine().toUpperCase();
             continuarJogando = resposta.equals("S");
         }

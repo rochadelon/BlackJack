@@ -16,6 +16,19 @@ public class Carta {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Carta carta = (Carta) obj;
+        return nome.equals(carta.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return nome.hashCode();
+    }
+
+    @Override
     public String toString() {
         return nome + " (" + valor + ")";
     }

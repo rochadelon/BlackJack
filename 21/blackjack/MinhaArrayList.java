@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class MinhaArrayList<T> implements MinhaList<T> {
     private static final int CAPACIDADE_INICIAL = 10;
     private Object[] elementos;
@@ -114,5 +116,25 @@ public class MinhaArrayList<T> implements MinhaList<T> {
         if (indice < 0 || indice >= tamanho) {
             throw new IndexOutOfBoundsException("Índice: " + indice + ", Tamanho: " + tamanho);
         }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private int currentIndex = 0;
+            
+            @Override
+            public boolean hasNext() {
+                return currentIndex < tamanho();
+            }
+            
+            @Override
+            public T next() {
+                if (!hasNext()) {
+                    throw new java.util.NoSuchElementException();
+                }
+                return obter(currentIndex++);
+            }
+        };
     }
 }
