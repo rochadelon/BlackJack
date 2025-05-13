@@ -31,7 +31,7 @@ public class App {
                 System.out.println("\nSeu total: " + jogo.getValorMaoJogador());
                 System.out.println("Opções: (1) Pedir carta | (2) Parar");
                 System.out.print("Escolha: ");
-                System.out.flush(); // Force output to display
+                System.out.flush(); 
                 
                 
                 String escolhaStr = scanner.nextLine();
@@ -47,7 +47,7 @@ public class App {
                     jogo.jogadorPedeCarta();
                     System.out.println("\nVocê recebeu uma nova carta.");
                     exibirCartasJogador(jogo);
-                    jogo.getCartaVisivelDealer()
+                    System.out.println("Carta visível do Dealer: " + jogo.getCartaVisivelDealer());
                 } else if (escolha == 2) {
                     jogadorParou = true;
                 } else {
