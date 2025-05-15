@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="blackjack:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/blackjack_jar</output-path>
+    <root id="archive" name="blackjack.jar">
+      <element id="module-output" name="blackjack" />
+      <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <element id="file-copy" path="$PROJECT_DIR$/App.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Baralho$Node.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Baralho.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Carta.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/CartaList.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/CartaListImpl.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Jogador.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Jogo.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/Mao.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/MinhaArrayList$1.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/MinhaArrayList.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/MinhaList.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/MinhaListImpl$1.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/MinhaListImpl.class" />
+    </root>
+  </artifact>
+</component>

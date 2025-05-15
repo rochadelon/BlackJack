@@ -1,8 +1,11 @@
+import java.util.NoSuchElementException;
+import java.util.Random;
+
 public class Baralho {
 
     private Node cabeca; // Início da lista
     private Node cauda;  // Fim da lista
-    private int tamanho; // Tamanho da lista
+    private int tamanho=2; // Tamanho da lista
 
     // Classe Node para a lista duplamente encadeada
     private class Node {
@@ -17,12 +20,12 @@ public class Baralho {
         }
     }
 
-    // Construtor: Inicializa o baralho
-    public Baralho() {
+    // Construtor: Inicializa os pontos do 
+    public Baralho(){
         this.cabeca = null;
         this.cauda = null;
         this.tamanho = 0;
-        criarBaralho();
+        criarBaralho(); 
     }
 
     // Adicionar uma carta no final da lista
@@ -43,7 +46,7 @@ public class Baralho {
     }
 
     // Método para criar o baralho completo
-    private void criarBaralho() {
+    public void criarBaralho() {
         // Naipes
         String[] naipes = {"Copas", "Espadas", "Ouros", "Paus"};
 
@@ -134,5 +137,33 @@ public class Baralho {
         }
         tamanho--;
         return cartaRemovida;
+    }
+
+    public void embaralhar() {
+        if (tamanho <= 1) return; // Não precisa embaralhar
+        
+        Random random = new Random();
+        MinhaList<Carta> cartas = new MinhaArrayList<>();
+        
+        // Extrair todas as cartas para uma MinhaArrayList
+        while (!estaVazio()) {
+            cartas.adicionar(removerPrimeira());
+        }
+        
+        // Reinserir em ordem aleatória
+        while (cartas.tamanho() > 0) {
+            int indiceAleatorio = random.nextInt(cartas.tamanho());
+            adicionar(cartas.remover(indiceAleatorio));
+        }
+        
+        System.out.println("Baralho embaralhado com sucesso!");
+    }
+
+    public Carta pegarCarta() {
+        if (estaVazio()) {
+            System.out.println("O baralho está vazio!");
+            return null;
+        }
+        return removerPrimeira(); // Remove and return the top card
     }
 }

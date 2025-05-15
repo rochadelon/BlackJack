@@ -1,35 +1,47 @@
 public class Mao {
-    private List<Carta> cartas;
+    private MinhaList<Carta> cartas;
 
     public Mao() {
-        this.cartas = new ArrayList<>();
+        this.cartas = new MinhaArrayList<>();
     }
 
     public void adicionarCarta(Carta carta) {
-        cartas.add(carta);
+        cartas.adicionar(carta);
     }
 
     public int calcularValor() {
-        int valorTotal = 0;
+        int valor = 0;
         int ases = 0;
-
-        for (Carta carta : cartas) {
-            valorTotal += carta.getValor();
-            if (carta.getValor() == 11) {
+        
+        for (int i = 0; i < cartas.tamanho(); i++) {
+            Carta carta = cartas.obter(i);
+            valor += carta.getValor();
+            if (carta.getNome().startsWith("Ás")) {
                 ases++;
             }
         }
-
-        // Ajustar o valor total se houver ases e o valor total for maior que 21
-        while (valorTotal > 21 && ases > 0) {
-            valorTotal -= 10; // Considera o Ás como 1 em vez de 11
+        
+        // Ajustar valor dos ases se necessário
+        while (valor > 21 && ases > 0) {
+            valor -= 10; // Reduz o valor do Ás de 11 para 1
             ases--;
         }
-
-        return valorTotal;
+        
+        return valor;
     }
 
-    public List<Carta> getCartas() {
+    public boolean temBlackjack() {
+        if (cartas.tamanho() != 2) return false;
+        
+        int valor = 0;
+        for (int i = 0; i < cartas.tamanho(); i++) {
+            valor += cartas.obter(i).getValor();
+        }
+        
+        return valor == 21;
+    }
+
+    public MinhaList<Carta> getCartas() {
         return cartas;
     }
 
